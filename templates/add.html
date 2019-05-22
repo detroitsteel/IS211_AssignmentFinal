@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Create New Brain Blog</title>	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type='text/css'>
+</head>  
+<body>
+    <div id="banner">
+	<h1>Create New Brain Blog</h1>
+    </div>
+    <p class="lead">Brain Dump </br>
+    <font color="RED">{{ error}}</font></p>
+    <form action="/addpost" method="post" id="addpost">
+	Brain Dump Title: <input type="text" name="title"></input>
+	</br>
+  	Brain Dump Area: <input type="text" name="poot"></input></br>
+
+<!--
+    <textarea rows="4" cols="50" name="poot" form="addpost">
+	Area for your Brain Dump...</textarea>
+	</br>
+-->
+  	<input type="submit" value="Add New"></input>
+
+
+</form>
+<!--
+<table style="width:100%">
+    <div id="tbltitle">
+      <p class="lead">List of Students</p>
+    </div>
+	<tr>
+	<h2>
+	<p class="lead">
+		<th>Student ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+	</p>
+	</h2>	
+	</tr>
+      	{% for stu in stulist%}
+	<tr>
+	<h2>
+	<p class="lead">
+		<td>{{ stu }}</td>
+		<td>{{ stulist[stu][0] }}</td>
+		<td> {{ stulist[stu][1] }}</td>
+	</p>
+	</h2>	
+	</tr>
+	{% endfor %}	
+</table>
+
+-->
+</body>
+</html>

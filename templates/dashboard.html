@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <title>Brain Blog</title>	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type='text/css'>
+</head>  
+<body>
+<div id="banner">
+    <h1>Brain Blog</h1>
+    <p class="lead">Got something to say. Blast it here to hit all your favorite outlets and let your brain blog
+    </p>
+    </br>
+</div>
+<table style="width:100%">
+    <div id="tbltitle">
+      <p class="lead">On the Brain </br>
+<a href = "/addpost"> Create New Brain Blog</a></p>
+
+    </div>
+	<tr>
+	<h2>
+	<p class="lead">
+		<th>UserName</th>
+		<th>Title</th>
+		<th>Post Date</th>
+		<th>Post Text</th>
+		<th>Post Edit Link</th>
+	</p>
+	</h2>	
+	</tr>
+      	{% for post in postlist%}
+	<tr>
+	<h2>
+	<p class="lead">
+		<td>{{ post }}</td>
+		<td>{{ postlist[post][1] }}</td>
+		<td>{{ postlist[post][2] }}</td>
+		<td>{{ postlist[post][3] }}</td>
+		<td> <a href = "/viewstu?stuid={{ post }}">Edit Blog Post</a></td>
+	</p>
+	</h2>	
+	</tr>
+	{% endfor %}	
+
+</table>
+<table style="width:100%">
+      <p class="lead">List of Quizes</br>
+<a href = "/addqz"> Add Quiz</a></p>
+	<tr>
+	<h2>
+	<p class="lead">
+		<th>Quiz ID</th>
+		<th>Quiz Subject</th>
+		<th>Quiz Question Count</th>
+		<th>Quiz Date</th>
+	</p>
+	</h2>	
+	</tr>
+      	{% for qz in qzlist%}
+	<tr>
+	<h2>
+	<p class="lead">
+		<td>{{ qz }}</td>
+		<td>{{ qzlist[qz][0] }}</td>
+		<td> {{ qzlist[qz][1] }}</td>
+		<td> {{ qzlist[qz][2] }}</td>
+	</p>
+	</h2>	
+	</tr>
+	{% endfor %}	
+
+</table>
+<p class="lead">
+	<a href = "/addstuqz"> Add Quiz Result</a></p>
+</p>
+  </body>
+</html>
