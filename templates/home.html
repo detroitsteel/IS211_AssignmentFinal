@@ -25,7 +25,6 @@
 		<th>Title</th>
 		<th>Post Date</th>
 		<th>Post Text</th>
-		<th>Post Edit Link</th>
 	</p>
 	</h2>	
 	</tr>
@@ -33,46 +32,15 @@
 	<tr>
 	<h2>
 	<p class="lead">
-		<td>{{ post }}</td>
-		<td>{{ postlist[post][1] }}</td>
+		<td>{{ postlist[post][0] }}</td>
 		<td>{{ postlist[post][2] }}</td>
 		<td>{{ postlist[post][3] }}</td>
-		<td> <a href = "/viewstu?stuid={{ post }}">Edit Blog Post</a></td>
+		<td>{{ postlist[post][4] }}</td>
 	</p>
 	</h2>	
 	</tr>
 	{% endfor %}	
 
 </table>
-<table style="width:100%">
-      <p class="lead">List of Quizes</br>
-<a href = "/addqz"> Add Quiz</a></p>
-	<tr>
-	<h2>
-	<p class="lead">
-		<th>Quiz ID</th>
-		<th>Quiz Subject</th>
-		<th>Quiz Question Count</th>
-		<th>Quiz Date</th>
-	</p>
-	</h2>	
-	</tr>
-      	{% for qz in qzlist%}
-	<tr>
-	<h2>
-	<p class="lead">
-		<td>{{ qz }}</td>
-		<td>{{ qzlist[qz][0] }}</td>
-		<td> {{ qzlist[qz][1] }}</td>
-		<td> {{ qzlist[qz][2] }}</td>
-	</p>
-	</h2>	
-	</tr>
-	{% endfor %}	
-
-</table>
-<p class="lead">
-	<a href = "/addstuqz"> Add Quiz Result</a></p>
-</p>
   </body>
 </html>

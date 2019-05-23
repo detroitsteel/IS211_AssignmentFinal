@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Delete Brain Blog</title>	
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type='text/css'>
+</head>  
+<body>
+    <div id="banner">
+	<h1>Delete Brain Blog</h1>
+    </div>
+    <p class="lead">Brain Dump </br>
+    <font color="RED">{{ error}}</font></p>
+<table style="width:100%">
+	<tr>
+	<h2>
+	<p class="lead">
+		<th>UserName</th>
+		<th>Title</th>
+		<th>Post Date</th>
+		<th>Post Text</th>
+	</p>
+	</h2>	
+	</tr>
+      	{% for post in postlist%}
+	<tr>
+	<h2>
+	<p class="lead">
+		<td>{{ post[0] }}</td>
+		<td>{{ post[2] }}</td>
+		<td>{{ post[3] }}</td>
+		<td>{{ post[4] }}</td>
+	</p>
+	</h2>	
+	</tr>
+	{% endfor %}	
+
+</table>
+</br>
+    <form action="/dltpost" method="post" id="addpost">
+<!--
+	NEW Brain Dump Title: <input type="text" name="title"></input>
+	</br>
+  	NEW Brain Dump Area: <input type="text" name="poot"></input></br>
+-->
+  	<input type="submit" value="Click Here to Delete Brain Dump"></input>
+	
+</form>
+</body>
+</html>
